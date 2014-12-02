@@ -3,7 +3,7 @@ require 'bundler/setup'
 
 Bundler.require
 
-require './models/Image'
+require './models/ImageThing'
 require './models/User'
 
 imgurClient = Imgur.new '5acc7208e8fa6fb' # my dev API key
@@ -25,7 +25,7 @@ end
 
 get '/:user' do
     @user = User.find(params[:user])
-    @imageys = @user.images.order(:due)
+    @imageys = @user.image_things.order(:due)  #image_things replaced todo_items
     erb :todoList
 end
 
@@ -57,7 +57,8 @@ helpers do
     end
 end
 
+#todo_items is image_things
 #todo_item is image_thing
 #task is imagey
 #tasks is imageys
-#TodoItem is Images
+#TodoItem is Image (i.e. the model)
