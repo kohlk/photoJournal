@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Sinatra Hello World</title>
-  <style>
-  body {
-  	text-align: center;
-  	font-family: Tahoma, Geneva, sans-serif;
-  	max-width: 800px;
-  	margin: 32px auto;
-  }
-
-  code {
-  	display: inline-block;
-  	font-size: inherit;
-  	font-family: Menlo, Consolas, monaco, monospace;
-  	border: 1px solid #777;
-  	border-radius: 3px;
-  	padding: 0 5px;
-  }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel='stylesheet' type='text/css' href='/style.css'>
 </head>
 <body>
-	<%= yield %>
+  <div class='container'>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
