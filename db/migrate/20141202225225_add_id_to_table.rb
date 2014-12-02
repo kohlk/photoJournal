@@ -5,3 +5,4 @@ class AddIdToTable < ActiveRecord::Migration
         end
     end
 end
+
