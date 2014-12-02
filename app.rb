@@ -40,12 +40,12 @@ get '/delete_user/:user' do
 end
 
 post '/:user/new_item' do
-    User.find(params[:user]).images.create(description: params[:imagey], due: params[:date])
+    User.find(params[:user]).image_things.create(description: params[:imagey], due: params[:date], path: params[:path])
         redirect "/#{params[:user]}"
 end
 
 get '/delete_item/:item' do
-    @image_thing = Image.find(params[:item])
+    @image_thing = ImageThing.find(params[:item])
     @user = @image_thing.user
     @image_thing.destroy
     redirect "/#{@user.id}"

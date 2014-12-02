@@ -3,7 +3,7 @@
   <a href="/">back</a>
 </p>
 <div class="list-group">
-  <% @imageys.each do |image| %>
+  <% @imageys.each do |imagey| %>
   <div class="list-group-item">
     <a href='/delete_item/<%= imagey.id %>' class="btn btn-sm btn-default complete"><span class="glyphicon glyphicon-ok"> </span></a>
     <%= imagey.description %>
@@ -16,11 +16,14 @@
     <h4 class="list-group-item-heading">New Image:</h4>
     <form class="form-inline" action='/<%= @user.id %>/new_item' method='POST'>
       <div class="form-group">
-        <input class="form-control" type='text' name='task' placeholder='task content' />
+        <input class="form-control" type='text' name='imagey' placeholder='description' />
       </div>
       <div class="form-group">
-        <input class="form-control" type='text' name='date' placeholder='due date' />
-</div>
+        <input class="form-control" type='text' name='date' placeholder='date taken' />
+      </div>
+      <div class="form-group">
+        <input class="form-control" type='text' name='pathh' placeholder='image path' />
+      </div>
       <button type='submit' class="btn btn-primary">Save</button>
     </form>
   </div>
