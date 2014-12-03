@@ -40,7 +40,11 @@ get '/delete_user/:user' do
 end
 
 post '/:user/new_item' do
-    User.find(params[:user]).image_things.create(description: params[:imagey], due: params[:date], path: params[:path])
+    User.find(params[:user]).image_things.create(description: params[:imagey], due: params[:date], image: params[:link])
+    img = Imgur::LocalImage.new(params[:link], title: 'generic')
+    @uploaded = imgurClient.upload(img)
+    #puts "uploaded: #{uploaded.link}"
+    #"<img src='#{uploaded.link}' /><p>Uploaded to #{uploaded.link}</p>"
         redirect "/#{params[:user]}"
 end
 

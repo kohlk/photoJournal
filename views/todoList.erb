@@ -7,8 +7,9 @@
   <div class="list-group-item">
     <a href='/delete_item/<%= imagey.id %>' class="btn btn-sm btn-default complete"><span class="glyphicon glyphicon-ok"> </span></a>
     <%= imagey.description %>
-    <% unless blank? imagey.due %> -- <%= imagey.due %></span><% end %>
+    <% unless blank? imagey.due %> - <%= imagey.due %></span><% end %>
   </div>
+    <img src='<% #{@uploaded.link} %>' /><p>Uploaded to <% #{@uploaded.link} %> </p>
   <% end %>
 </div>
 <div class="panel">
@@ -22,7 +23,7 @@
         <input class="form-control" type='text' name='date' placeholder='date taken' />
       </div>
       <div class="form-group">
-        <input class="form-control" type='text' name='pathh' placeholder='image path' />
+        <input class="form-control" type='file' name='link' placeholder='image path' />
       </div>
       <button type='submit' class="btn btn-primary">Save</button>
     </form>
