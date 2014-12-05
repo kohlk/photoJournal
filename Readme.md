@@ -1,6 +1,6 @@
 # PhotoJournal
 
-PhotoJournal is a multiuser photo/description database. I have implemented the imgur API for easy and smooth image handling. The application is an extension of Lab 6 in Quinn Rohlf's section of Networks. It can be found deployed at photojournal-kohl.herokuapp.com
+PhotoJournal is a multiuser photo/description database. I have implemented the imgur API for easy and smooth image handling. The application is an extension of Lab 6 in Quinn Rohlf's section of Networks. It can be found deployed at photojournal-kohl.herokuapp.com. The deployed version of this application is not working. It is working if run on your local machine!
 
 ## Features
 
@@ -11,13 +11,11 @@ PhotoJournal is a multiuser photo/description database. I have implemented the i
 
 
 ## Use
+1. Clone repo
+2. Fire it up with shotgun
+3. Add a user if you wish, or use the pre-made profile
+4. Scroll down to the bottom of this page and enter the description, date, and actual file path of the image
+5. Glory glory!
 
-1. Clone the repo
-2. Edit `config/initializers/admin_users.rb` to reflect the admins google account info.
-3. Set the `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GITHUB_CLIENT_ID`, and `GITHUB_CLIENT_SECRET` environment variables with your GitHub and Google API credentials (if you're deploying to heroku, you'll need to set those on the server as well).
-4. Install dependencies with `bundle install`
-5. Create the database with `rake db:create db:migrate` (you will need to have postgres installed)
-6. Run this app with `rackup` or `shotgun`
-
-## Screenshots
-
+## Notes
+I learned from: stackoverflow.com/questions/81180/how-to-get-the-file-path-from-html-input-form-in-firefox-3 that when using the HTML filetype "file" in a form, the full path of the object is not given. This was a difficult bug to uncover! To get around this I opted for a text field in which the user enters the full path name of the image.
